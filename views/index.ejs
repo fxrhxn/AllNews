@@ -1,0 +1,59 @@
+<% include ../partials/header.ejs %>
+<br>
+
+<div class="ui container">
+
+<h2>All News</h2>
+<p>The latest news coming from all over the web; all in one convenient website.</p>
+<a href="/savedArticles" class="ui button blue">
+
+  Saved Articles <%= savedlength %>
+
+</a>
+
+
+<% titles.forEach(function(titulo){%>
+
+
+<h3 style="margin-top : 20px" name="type">
+<a href="/save/<%=titulo.link%>/<%= titulo.title %>" id="save"><i class="save icon green"></i></a>
+
+<a href="<%= titulo.link %>">
+  <%= titulo.title %>
+</a>
+
+</h3>
+
+
+<%})%>
+
+
+<script type="text/javascript">
+  var a = $('h3').text();
+
+// $('#save').hover(function(){
+//   var $this = $(this);
+//
+//   $('#save').css('color', 'red');
+//
+//
+// });
+
+$("i").hover(function(){
+    $(this).css("background-color", "blue");
+    }, function(){
+    $(this).css("background-color", "white");
+});
+
+
+  //
+  // if($.trim($("a").html())==''){
+  //   console.log('HEAADFALS');
+  // }
+
+
+  </script>
+
+</div>
+</body>
+</html>

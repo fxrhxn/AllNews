@@ -1,0 +1,62 @@
+<% include ../partials/header.ejs %>
+<br>
+
+<div class="ui container">
+
+<h2>Saved News</h2>
+<p>News that you saved, so you can read later.</p>
+<a href="/" class="ui button blue">
+
+  Read More Articles
+
+</a>
+<br><br>
+<p><a href="/clearAll">Clear All</a></p>
+
+<% body.forEach(function(la){ %>
+
+
+<h3 style="margin-top : 20px" name="type">
+
+<!-- Delete ICON, deletes single articles from DB. Not working for some reason. -->
+<!-- <a href="/deleteid/<%=la.articles[0].title%>"><i class="remove circle outline icon red"></i></a> -->
+
+<a href="<%=la.articles[0].link%>">
+  <%= la.articles[0].title %>
+</a>
+
+</h3>
+
+
+<%})%>
+
+
+<script type="text/javascript">
+  var a = $('h3').text();
+
+// $('#save').hover(function(){
+//   var $this = $(this);
+//
+//   $('#save').css('color', 'red');
+//
+//
+// });
+
+$("i").hover(function(){
+    $(this).css("background-color", "yellow");
+    }, function(){
+    $(this).css("background-color", "white");
+});
+
+
+  //
+  // if($.trim($("a").html())==''){
+  //   console.log('HEAADFALS');
+  // }
+
+
+  </script>
+
+</div>
+</body>
+</html>
